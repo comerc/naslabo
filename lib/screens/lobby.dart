@@ -35,17 +35,27 @@ class _LobbyScreenState extends State<LobbyScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Column(
-        children: [
-          Center(child: Text("Users")),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ListUsers(),
-          ),
-        ],
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          // Add your onPressed code here!
+        },
+        child: Text("Ready"),
       ),
-    ));
+      appBar: AppBar(
+        title: Text("Users"),
+        centerTitle: true,
+      ),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: ListUsers(),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -12,6 +12,7 @@ class MessageScreen extends StatelessWidget {
           children: [
             TextFormField(
               controller: messageController,
+              maxLines: 10,
             ),
             ElevatedButton(
               onPressed: (){

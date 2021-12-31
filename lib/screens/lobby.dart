@@ -26,6 +26,11 @@ final data = [
   User(name: "Sasha", status: Status.wait),
 ];
 
+const statusDisplayNames = {
+  Status.wait: "Wait",
+  Status.ready: "Ready",
+};
+
 class _LobbyScreenState extends State<LobbyScreen> {
   @override
   Widget build(BuildContext context) {
@@ -55,6 +60,7 @@ class _ListUsersState extends State<ListUsers> {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+        shrinkWrap: true,
         itemCount: data.length,
         itemBuilder: (BuildContext context, int index) {
           return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
@@ -63,7 +69,8 @@ class _ListUsersState extends State<ListUsers> {
               child: Text('${data[index].name}'),
             ),
             ElevatedButton(
-                onPressed: () {}, child: Text("${data[index].status}"))
+                onPressed: () {},
+                child: Text("${statusDisplayNames[data[index].status]}"))
           ]);
         });
   }

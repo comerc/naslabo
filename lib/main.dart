@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:naslabo/screens/lobby.dart';
-import 'package:naslabo/screens/login.dart';
+import 'package:naslabo/import.dart';
 
 void main() {
   runApp(MyApp());

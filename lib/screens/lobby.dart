@@ -29,7 +29,8 @@ final data = [
 class _LobbyScreenState extends State<LobbyScreen> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return Scaffold(
+        body: SafeArea(
       child: Column(
         children: [
           Center(child: Text("Users")),
@@ -39,7 +40,7 @@ class _LobbyScreenState extends State<LobbyScreen> {
           ),
         ],
       ),
-    );
+    ));
   }
 }
 
@@ -53,19 +54,17 @@ class ListUsers extends StatefulWidget {
 class _ListUsersState extends State<ListUsers> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: ListView.builder(
-          itemCount: data.length,
-          itemBuilder: (BuildContext context, int index) {
-            return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 10),
-                child: Text('${data[index].name}'),
-              ),
-              ElevatedButton(
-                  onPressed: () {}, child: Text("${data[index].status}"))
-            ]);
-          }),
-    );
+    return ListView.builder(
+        itemCount: data.length,
+        itemBuilder: (BuildContext context, int index) {
+          return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
+            Padding(
+              padding: const EdgeInsets.only(right: 10),
+              child: Text('${data[index].name}'),
+            ),
+            ElevatedButton(
+                onPressed: () {}, child: Text("${data[index].status}"))
+          ]);
+        });
   }
 }

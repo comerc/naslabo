@@ -46,13 +46,11 @@ class _LobbyScreenState extends State<LobbyScreen> {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: ListUsers(),
-            ),
-          ],
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: ListUsers(),
+          ),
         ),
       ),
     );
@@ -69,19 +67,24 @@ class ListUsers extends StatefulWidget {
 class _ListUsersState extends State<ListUsers> {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-        shrinkWrap: true,
-        itemCount: data.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-            Padding(
-              padding: const EdgeInsets.only(right: 10),
-              child: Text('${data[index].name}'),
+    return ListView.separated(
+      separatorBuilder: (context, index) => Divider(
+        color: Colors.black,
+      ),
+      shrinkWrap: true,
+      itemCount: data.length,
+      itemBuilder: (BuildContext context, int index) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('${data[index].name}'),
+            Icon(
+              Icons.hourglass_empty,
+              size: 16,
             ),
-            ElevatedButton(
-                onPressed: () {},
-                child: Text("${statusDisplayNames[data[index].status]}"))
-          ]);
-        });
+          ],
+        );
+      },
+    );
   }
 }

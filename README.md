@@ -1,4 +1,4 @@
-# naslabo!
+# naslabo
 
 A new Flutter project.
 

@@ -30,4 +30,4 @@ linter:
 
 analyzer:
   exclude:
-    - "backend/**"
+    - "naslabo_backend/**"

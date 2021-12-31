@@ -47,6 +47,15 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: Text("Create lobby"),
                   ),
+                  
+                  ElevatedButton(
+                    onPressed: () {
+                      submitForm;
+                      Navigator.pushNamed(context, "/message",
+                          arguments: {name: nameController.text});
+                    },
+                    child: Text("Go to message screen"),
+                  ),
                 ],
               ),
             ),

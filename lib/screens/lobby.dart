@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:naslabo/import.dart';
 
 class LobbyScreen extends StatefulWidget {
   const LobbyScreen({Key? key}) : super(key: key);
@@ -37,9 +38,9 @@ class _LobbyScreenState extends State<LobbyScreen> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          // Add your onPressed code here!
+          Navigator.pushNamed(context, '/message');
         },
-        child: Text("Ready"),
+        child: Text("Go!"),
       ),
       appBar: AppBar(
         title: Text("Users"),

@@ -34,7 +34,7 @@ class LoginScreen extends StatelessWidget {
                   ElevatedButton(
                     onPressed: () {
                       submitForm;
-                      //Navigator.pushNamed(context, routeName)
+                      Navigator.pushNamed(context, "/lobby",arguments: inviteCodeController.text);
                     },
                     child: Text("Enter lobby"),
                   ),

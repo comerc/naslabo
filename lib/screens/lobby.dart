@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
-class Lobby extends StatefulWidget {
-  const Lobby({ Key? key }) : super(key: key);
+class LobbyScreen extends StatefulWidget {
+  const LobbyScreen({Key? key}) : super(key: key);
 
   @override
-  _LobbyState createState() => _LobbyState();
+  _LobbyScreenState createState() => _LobbyScreenState();
 }
 
-class _LobbyState extends State<Lobby> {
+class _LobbyScreenState extends State<LobbyScreen> {
   @override
   Widget build(BuildContext context) {
-    return (
-      
+    return SafeArea(
+      child: Column(
+        children: [
+          Center(child: Text("Users")),
+          Row(
+            children: [Text('Username')],
+          )
+        ],
+      ),
     );
   }
 }

@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/lobby': (context) => LobbyScreen(),
         '/login': (context) => LoginScreen(),
-        '/message':(context)=> MessageScreen
+        '/message':(context)=> MessageScreen(),
       },
       initialRoute: "/login",
       home: Scaffold(

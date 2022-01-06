@@ -9,6 +9,8 @@ class _LoginScreenState extends State<LoginScreen> {
   final String name = "none";
   final String code = "none";
 
+  bool isEnterLobbyButtonActive = false;
+
   final inviteCodeController = TextEditingController();
   final nameController = TextEditingController();
 
@@ -70,5 +72,16 @@ class _LoginScreenState extends State<LoginScreen> {
   void submitForm() {
     print(nameController.text);
     print(inviteCodeController.text);
+  }
+
+  Widget buildEnterLobbyButton() {
+    return ElevatedButton(
+      onPressed: () {
+        submitForm;
+        Navigator.pushNamed(context, "/lobby",
+            arguments: {name: nameController.text});
+      },
+      child: Text("Enter lobby"),
+    );
   }
 }

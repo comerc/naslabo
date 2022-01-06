@@ -15,6 +15,19 @@ class _LoginScreenState extends State<LoginScreen> {
   final nameController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+
+    nameController.addListener(() {
+      print("kek");
+
+      isEnterLobbyButtonActive = nameController.text.isEmpty ? false : true;
+
+      buildEnterLobbyButton;
+    });
+  }
+
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -27,6 +40,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 children: [
                   TextFormField(
+                    //onChanged: () {},
                     controller: nameController,
                     decoration: (InputDecoration(
                       labelText: "Enter your name",
@@ -69,11 +83,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget buildEnterLobbyButton() {
     return ElevatedButton(
-      onPressed: () {
-        submitForm;
-        Navigator.pushNamed(context, "/lobby",
-            arguments: {"name": nameController.text});
-      },
+      onPressed: null,
       child: Text("Enter lobby"),
     );
   }

@@ -16,7 +16,7 @@ enum Status {
 class User {
   User({required this.name, required this.status});
 
-  String name;
+  String? name;
   Status status;
 }
 
@@ -35,22 +35,26 @@ const statusDisplayNames = {
 class _LobbyScreenState extends State<LobbyScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushNamed(context, '/message');
-        },
-        child: Text("Go!"),
-      ),
-      appBar: AppBar(
-        title: Text("Users"),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        child: Center(
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: ListUsers(),
+    final arguments = ModalRoute.of(context)?.settings.arguments as Map;
+    data.add(User(name: arguments['name'], status: Status.wait));
+    return MaterialApp(
+      home: Scaffold(
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushNamed(context, '/message');
+          },
+          child: Text("Go!"),
+        ),
+        appBar: AppBar(
+          title: Text("Users"),
+          centerTitle: true,
+        ),
+        body: SafeArea(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: ListUsers(),
+            ),
           ),
         ),
       ),

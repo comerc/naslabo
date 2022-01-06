@@ -72,7 +72,7 @@ class _LoginScreenState extends State<LoginScreen> {
       onPressed: () {
         submitForm;
         Navigator.pushNamed(context, "/lobby",
-            arguments: {name: nameController.text});
+            arguments: {"name": nameController.text});
       },
       child: Text("Enter lobby"),
     );

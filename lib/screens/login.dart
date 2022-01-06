@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
+  @override
+  _LoginScreenState createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
   final String name = "none";
   final String code = "none";
 
@@ -47,7 +52,6 @@ class LoginScreen extends StatelessWidget {
                     },
                     child: Text("Create lobby"),
                   ),
-                  
                   ElevatedButton(
                     onPressed: () {
                       submitForm;

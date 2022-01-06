@@ -83,7 +83,15 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget buildEnterLobbyButton() {
     return ElevatedButton(
-      onPressed: null,
+      onPressed: () {
+        if (isEnterLobbyButtonActive) {
+          submitForm;
+          Navigator.pushNamed(context, "/lobby",
+              arguments: {"name": nameController.text});
+        } else {
+          null;
+        }
+      },
       child: Text("Enter lobby"),
     );
   }

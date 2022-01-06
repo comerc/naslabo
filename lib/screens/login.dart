@@ -38,14 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     decoration:
                         (InputDecoration(labelText: "Enter your invite code")),
                   ),
-                  ElevatedButton(
-                    onPressed: () {
-                      submitForm;
-                      Navigator.pushNamed(context, "/lobby",
-                          arguments: {"name": nameController.text});
-                    },
-                    child: Text("Enter lobby"),
-                  ),
+                  buildEnterLobbyButton(),
                   ElevatedButton(
                     onPressed: () {
                       submitForm;

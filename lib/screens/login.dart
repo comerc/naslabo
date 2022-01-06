@@ -42,7 +42,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       submitForm;
                       Navigator.pushNamed(context, "/lobby",
-                          arguments: {name: nameController.text});
+                          arguments: {"name": nameController.text});
                     },
                     child: Text("Enter lobby"),
                   ),
@@ -50,7 +50,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       submitForm;
                       Navigator.pushNamed(context, "/lobby",
-                          arguments: {name: nameController.text});
+                          arguments: {"name": nameController.text});
                     },
                     child: Text("Create lobby"),
                   ),
@@ -58,7 +58,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () {
                       submitForm;
                       Navigator.pushNamed(context, "/message",
-                          arguments: {name: nameController.text});
+                          arguments: {"name": nameController.text});
                     },
                     child: Text("Go to message screen"),
                   ),
